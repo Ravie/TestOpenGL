@@ -39,5 +39,33 @@ namespace TestOpenGL
             while (glControl1.IsIdle)
                 glControl1.Refresh();
         }
+
+        private void glControl1_MouseDown(object sender, MouseEventArgs e)
+        {/*
+            if (e.Button == MouseButtons.Left || e.Delta > 0)
+            {
+                glgraphics.radius--;
+                glgraphics.Update();
+            }
+            if (e.Button == MouseButtons.Right || e.Delta < 0)
+            {
+                glgraphics.radius++;
+                glgraphics.Update();
+            }
+        */}
+
+        private void glControl1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                glgraphics.radius -= e.Delta / 120;
+                glgraphics.Update();
+            }
+            if (e.Delta < 0)
+            {
+                glgraphics.radius -= e.Delta / 120;
+                glgraphics.Update();
+            }
+        }
     }
 }
