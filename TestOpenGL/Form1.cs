@@ -41,18 +41,18 @@ namespace TestOpenGL
         }
 
         private void glControl1_MouseDown(object sender, MouseEventArgs e)
-        {/*
-            if (e.Button == MouseButtons.Left || e.Delta > 0)
+        {
+            if (e.Button == MouseButtons.Left)
             {
-                glgraphics.radius--;
+                glgraphics.change_z++;
                 glgraphics.Update();
             }
-            if (e.Button == MouseButtons.Right || e.Delta < 0)
+            if (e.Button == MouseButtons.Right)
             {
-                glgraphics.radius++;
+                glgraphics.change_z--;
                 glgraphics.Update();
             }
-        */}
+        }
 
         private void glControl1_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -64,6 +64,40 @@ namespace TestOpenGL
             if (e.Delta < 0)
             {
                 glgraphics.radius -= e.Delta / 120;
+                glgraphics.Update();
+            }
+        }
+
+        private void glControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                glgraphics.change_x--;
+                glgraphics.Update();
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                glgraphics.change_x++;
+                glgraphics.Update();
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                glgraphics.change_y++;
+                glgraphics.Update();
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                glgraphics.change_y--;
+                glgraphics.Update();
+            }
+            if (e.KeyCode == Keys.Oemplus)
+            {
+                glgraphics.change_size *= 1.25f;
+                glgraphics.Update();
+            }
+            if (e.KeyCode == Keys.OemMinus)
+            {
+                glgraphics.change_size /= 1.25f;
                 glgraphics.Update();
             }
         }

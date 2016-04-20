@@ -18,6 +18,11 @@ namespace TestOpenGL
         public float longitude = 60.41f;
         public float radius = 15f;
 
+        public int change_x = 0;
+        public int change_y = 0;
+        public int change_z = 0;
+        public float change_size = 1.0f;
+
         public float rotateAngle = 5.0f;
         public const float delta = 0.5f;
 
@@ -100,15 +105,15 @@ namespace TestOpenGL
                 GL.Color3(Color.DarkMagenta);
                 for (ix = 0; ix <= nx; ++ix)
                 {
-                    x = r * Math.Sin(iy * Math.PI / ny) * Math.Cos(2 * ix * Math.PI / nx);
-                    y = r * Math.Sin(iy * Math.PI / ny) * Math.Sin(2 * ix * Math.PI / nx);
-                    z = r * Math.Cos(iy * Math.PI / ny);
+                    x = change_size * r * Math.Sin(iy * Math.PI / ny) * Math.Cos(2 * ix * Math.PI / nx) + change_x;
+                    y = change_size * r * Math.Sin(iy * Math.PI / ny) * Math.Sin(2 * ix * Math.PI / nx) + change_y;
+                    z = change_size * r * Math.Cos(iy * Math.PI / ny) + change_z;
                     GL.Normal3(x, y, z);
                     GL.Vertex3(x, y, z);
 
-                    x = r * Math.Sin((iy + 1) * Math.PI / ny) * Math.Cos(2 * ix * Math.PI / nx);
-                    y = r * Math.Sin((iy + 1) * Math.PI / ny) * Math.Sin(2 * ix * Math.PI / nx);
-                    z = r * Math.Cos((iy + 1) * Math.PI / ny);
+                    x = change_size * r * Math.Sin((iy + 1) * Math.PI / ny) * Math.Cos(2 * ix * Math.PI / nx) + change_x;
+                    y = change_size * r * Math.Sin((iy + 1) * Math.PI / ny) * Math.Sin(2 * ix * Math.PI / nx) + change_y;
+                    z = change_size * r * Math.Cos((iy + 1) * Math.PI / ny) + change_z;
                     GL.Normal3(x, y, z);
                     GL.Vertex3(x, y, z);
                 }
