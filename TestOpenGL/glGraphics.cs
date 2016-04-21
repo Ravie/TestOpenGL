@@ -51,6 +51,7 @@ namespace TestOpenGL
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadMatrix(ref viewMat);
             Render();
+            radius = (radius > 0) ? radius : 0;
             cameraPosition = new Vector3
             (
                 (float)(radius * Math.Cos(Math.PI / 180.0f * latitude) * Math.Cos(Math.PI / 180.0f * longitude)),
