@@ -45,16 +45,8 @@ namespace TestOpenGL
 
         private void glControl1_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
-            {
-                glgraphics.radius -= e.Delta / 120;
-                glgraphics.Update();
-            }
-            if (e.Delta < 0)
-            {
-                glgraphics.radius -= e.Delta / 120;
-                glgraphics.Update();
-            }
+            glgraphics.radius -= e.Delta / 120;
+            glgraphics.Update();
         }
 
         private void glControl1_KeyDown(object sender, KeyEventArgs e)
