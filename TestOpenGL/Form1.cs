@@ -100,5 +100,21 @@ namespace TestOpenGL
                 glgraphics.Update();
             }
         }
+
+        private void glControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Cursor = Cursors.SizeAll;
+            }
+        }
+
+        private void glControl1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Cursor = Cursors.Default;
+            }
+        }
     }
 }
