@@ -28,10 +28,13 @@ namespace TestOpenGL
 
         private void glControl1_MouseMove(object sender, MouseEventArgs e)
         {
-            float widthCoef = (e.X - glControl1.Width * 0.5f) / (float)glControl1.Width;
-            float heightCoef = (-e.Y + glControl1.Height * 0.5f) / (float)glControl1.Height;
-            glgraphics.latitude = heightCoef * 180;
-            glgraphics.longitude = widthCoef * 360;
+            if (e.Button == MouseButtons.Left)
+            {
+                float widthCoef = (e.X - glControl1.Width * 0.5f) / (float)glControl1.Width;
+                float heightCoef = (-e.Y + glControl1.Height * 0.5f) / (float)glControl1.Height;
+                glgraphics.latitude = heightCoef * 180;
+                glgraphics.longitude = widthCoef * 360;
+            }
         }
 
         void Application_Idle(object sender, EventArgs e)
