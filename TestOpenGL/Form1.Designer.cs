@@ -57,9 +57,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Variable,
             this.Value});
-            this.dataGridView1.Location = new System.Drawing.Point(1009, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(988, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(243, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(264, 179);
             this.dataGridView1.TabIndex = 1;
             // 
             // Variable
@@ -67,6 +67,7 @@
             this.Variable.HeaderText = "Переменная";
             this.Variable.Name = "Variable";
             this.Variable.ReadOnly = true;
+            this.Variable.Width = 120;
             // 
             // Value
             // 

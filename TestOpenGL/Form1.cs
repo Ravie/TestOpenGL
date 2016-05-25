@@ -14,18 +14,34 @@ namespace TestOpenGL
 
         private void glControl1_Load(object sender, EventArgs e)
         {
-            int texID = glgraphics.LoadTexture("../../picture.png");
-            glgraphics.texturesIDs.Add(texID);
+            int texID0 = glgraphics.LoadTexture("../../planet_textures/sunmap.bmp");
+            glgraphics.texturesIDs.Add(texID0);
+            int texID1 = glgraphics.LoadTexture("../../planet_textures/mercurymap.bmp");
+            glgraphics.texturesIDs.Add(texID1);
+            int texID2 = glgraphics.LoadTexture("../../planet_textures/venusmap.bmp");
+            glgraphics.texturesIDs.Add(texID2);
+            int texID3 = glgraphics.LoadTexture("../../planet_textures/earthmap.bmp");
+            glgraphics.texturesIDs.Add(texID3);
+            int texID4 = glgraphics.LoadTexture("../../planet_textures/marsmap.bmp");
+            glgraphics.texturesIDs.Add(texID4);
+            int texID5 = glgraphics.LoadTexture("../../planet_textures/jupitermap.bmp");
+            glgraphics.texturesIDs.Add(texID5);
+            int texID6 = glgraphics.LoadTexture("../../planet_textures/saturnmap.bmp");
+            glgraphics.texturesIDs.Add(texID6);
+            int texID7 = glgraphics.LoadTexture("../../planet_textures/uranusmap.bmp");
+            glgraphics.texturesIDs.Add(texID7);
+            int texID8 = glgraphics.LoadTexture("../../planet_textures/neptunmap.bmp");
+            glgraphics.texturesIDs.Add(texID8);
             glgraphics.Setup(glControl1.Width, glControl1.Height);
             for(int i = 0; i < 6; i++)
                 dataGridView1.Rows.Add();
-            dataGridView1[0, 0].Value = "RADIUS";
-            dataGridView1[0, 1].Value = "SIZE";
-            dataGridView1[0, 2].Value = "X";
-            dataGridView1[0, 3].Value = "Y";
-            dataGridView1[0, 4].Value = "Z";
-            dataGridView1[0, 5].Value = "LATITUDE";
-            dataGridView1[0, 6].Value = "LONGITUDE";
+            dataGridView1[0, 0].Value = "Расстояние (а.е.м.)";
+            dataGridView1[0, 1].Value = "Размер (отн. Земли)";
+            dataGridView1[0, 2].Value = "Смещение по X";
+            dataGridView1[0, 3].Value = "Смещение по Y";
+            dataGridView1[0, 4].Value = "Смещение по Z";
+            dataGridView1[0, 5].Value = "Угол наклона";
+            dataGridView1[0, 6].Value = "Угол поворота";
             dataGridView1[1, 0].Value = glgraphics.radius;
             dataGridView1[1, 1].Value = glgraphics.change_size;
             dataGridView1[1, 2].Value = glgraphics.change_x;
@@ -106,13 +122,13 @@ namespace TestOpenGL
                 dataGridView1[1, 4].Value = glgraphics.change_z;
                 glgraphics.Update();
             }
-            if (e.KeyCode == Keys.Oemplus)
+            if (e.KeyCode == Keys.Add)
             {
                 glgraphics.change_size *= 1.25f;
                 dataGridView1[1, 1].Value = glgraphics.change_size;
                 glgraphics.Update();
             }
-            if (e.KeyCode == Keys.OemMinus)
+            if (e.KeyCode == Keys.Subtract)
             {
                 glgraphics.change_size /= 1.25f;
                 dataGridView1[1, 1].Value = glgraphics.change_size;
