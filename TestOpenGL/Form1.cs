@@ -33,7 +33,7 @@ namespace TestOpenGL
             int texID8 = glgraphics.LoadTexture("../../planet_textures/neptunmap.bmp");
             glgraphics.texturesIDs.Add(texID8);
             glgraphics.Setup(glControl1.Width, glControl1.Height);
-            for(int i = 0; i < 6; i++)
+            for(int i = 0; i < 8; i++)
                 dataGridView1.Rows.Add();
             dataGridView1[0, 0].Value = "Расстояние (а.е.м.)";
             dataGridView1[0, 1].Value = "Размер (отн. Земли)";
@@ -42,6 +42,8 @@ namespace TestOpenGL
             dataGridView1[0, 4].Value = "Смещение по Z";
             dataGridView1[0, 5].Value = "Угол наклона";
             dataGridView1[0, 6].Value = "Угол поворота";
+            dataGridView1[0, 7].Value = "glVersion";
+            dataGridView1[0, 8].Value = "glslVersion";
             dataGridView1[1, 0].Value = glgraphics.radius;
             dataGridView1[1, 1].Value = glgraphics.change_size;
             dataGridView1[1, 2].Value = glgraphics.change_x;
@@ -49,6 +51,8 @@ namespace TestOpenGL
             dataGridView1[1, 4].Value = glgraphics.change_z;
             dataGridView1[1, 5].Value = glgraphics.latitude;
             dataGridView1[1, 6].Value = glgraphics.longitude;
+            dataGridView1[1, 7].Value = glgraphics.glVersion;
+            dataGridView1[1, 8].Value = glgraphics.glslVersion;
             Application.Idle += Application_Idle;
         }
 

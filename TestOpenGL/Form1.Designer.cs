@@ -59,7 +59,7 @@
             this.Value});
             this.dataGridView1.Location = new System.Drawing.Point(988, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(264, 179);
+            this.dataGridView1.Size = new System.Drawing.Size(264, 223);
             this.dataGridView1.TabIndex = 1;
             // 
             // Variable

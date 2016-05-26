@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-
 namespace TestOpenGL
 {
     class glGraphics
     {
+        public string glVersion, glslVersion;
         Vector3 cameraPosition = new Vector3(2, 3, 4);
         Vector3 cameraDirecton = new Vector3(0, 0, 0);
         Vector3 cameraUp = new Vector3(0, 0, 1);
@@ -32,6 +32,8 @@ namespace TestOpenGL
 
         public void Setup(int width, int height)
         {
+            glVersion = GL.GetString(StringName.Version);
+            glslVersion = GL.GetString(StringName.ShadingLanguageVersion);
             GL.ClearColor(Color.Black);
             GL.ShadeModel(ShadingModel.Smooth);
             GL.Enable(EnableCap.DepthTest);
@@ -371,7 +373,6 @@ namespace TestOpenGL
             //Vector4 materialSpecular = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
             //GL.Material(MaterialFace.Front, MaterialParameter.Specular, materialSpecular);
             //GL.Material(MaterialFace.Front, MaterialParameter.Shininess, materialShininess);
-            
         }
     }
 }
